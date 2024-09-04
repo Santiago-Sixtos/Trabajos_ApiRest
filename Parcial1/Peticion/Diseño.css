@@ -1,0 +1,83 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-image: url('https://wallpapercave.com/wp/wp6736990.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; /* Cambiamos "height" a "min-height" para que se expanda correctamente */
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    background: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: white
+}
+
+button {
+    padding: 15px 30px; /* Aumentamos el padding para hacerlo más grande */
+    font-size: 18px; /* Ajustamos el tamaño de la fuente */
+    cursor: pointer;
+    border: none;
+    border-radius: 20px; /* Hacemos los bordes más redondos */
+    background-color: #00ff00;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #005600;
+    transform: scale(1.05);
+
+}
+
+#gallery {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    color: white
+}
+
+#gallery p {
+    color: white; /* Cambiamos el color del texto a blanco */
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
