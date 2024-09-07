@@ -10,7 +10,7 @@ const upload = multer();
 app.use(cors()); //Middleware de tercero
 app.use(express.json()); //Middleware incorporado en express
 app.use(express.text()); //Middleware de texto 
-app.use(express.urlencoded({extended: true})); //Middleware para parsear un formulario url encode
+app.use(express.urlencoded({extended:true})); //Middleware para parsear un formulario url encode
 app.use(upload.none()) //Middleware para parsear un for data
 app.use(bodyParser.xml()); //Formularios xml
 
