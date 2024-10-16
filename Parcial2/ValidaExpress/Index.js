@@ -11,7 +11,7 @@ app.get('/usuario', check('edad').isNumeric(),(req,res)=>{
     if (result.isEmpty()) {
         res.send({mensaje:'Server Express contestando a peticion get'});
     } else {
-        res.json(result);    
+        return res.status(400).json({errors: errors.array()});    
     } 
 })
  
