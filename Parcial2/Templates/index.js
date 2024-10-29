@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/mivista', (req, res, next) => {
     console.log(req.query.nombre);
     let opciones = { nombre: req.query.nombre };
-    res.render('index', opciones);
+    res.render('mivista', opciones);
 });
  
 app.listen(3001, () => {
