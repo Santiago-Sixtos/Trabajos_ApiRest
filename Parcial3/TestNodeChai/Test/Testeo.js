@@ -1,4 +1,4 @@
-import assert from 'node:assert'; //Asegurar la respuesta
+//import assert from 'node:assert'; //Asegurar la respuesta
 import test from 'node:test'; // Importamos el Test de node para realizarlo en nuestro script
 import * as chai from 'Chai';
 import * as area from "../src/area.js";  //Importamos el metodo a realizar
