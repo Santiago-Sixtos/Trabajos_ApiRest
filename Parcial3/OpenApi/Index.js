@@ -15,7 +15,7 @@ const swaggerOptions = {
     version: '1.0.0',
     },
     servers:[
-    { url: "http://localhost:3001" }
+    { url: "http://localhost:3002" }
     ],
     },
     apis: [`${path.join(__dirname,"index.js")}`],
@@ -41,13 +41,17 @@ const swaggerOptions = {
 *         description: Regresa un objeto con el resultado de la operacion de alta
 */
 
-app.get('/',(req,res)=>{
+app.get('/empleado',(req,res)=>{
     res.send('Server Express contestando a peticion get')
 })
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api-docs",swaggerUI.serve,swaggerUI.setup(swaggerDocs));
 
-app.listen(3001,()=>{
-    console.log('http://localhost:3001')
+app.get("/api-spec", (req,res)=>{ 
+    res.json(swaggerDocs); 
+})
+
+app.listen(3002,()=>{
+    console.log('http://localhost:3002')
 })
