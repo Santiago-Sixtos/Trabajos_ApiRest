@@ -3,7 +3,9 @@ const path = require('path');
 const swaggerUI = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const app = express();
+//const datosReadme = fs.readFileSync(path.join(__dirname,'readme.md'),{ encoding: 'utf8', flag: 'r' });
 
+//const port = process.env.PORT || 8802;
 const  cors  = require ('cors');
 app.use(cors());
  
@@ -13,18 +15,21 @@ const swaggerOptions = {
     info: {
     title: 'API Empleados',
     version: '1.0.0',
+    //description: datosReadme
     },
     servers:[
     { url: "http://localhost:3002" }
     ],
     },
-    apis: [`${path.join(__dirname,"index.js")}`],
+    apis: [`${path.join(__dirname,"Index.js")}`],
     };
 
 /**
 * @swagger
 * /empleado:
 *   get:
+*     tags:
+*       - usuario
 *     description: Consultar todos los empleados
 *     responses:
 *       200:
@@ -41,7 +46,7 @@ const swaggerOptions = {
 *         description: Regresa un objeto con el resultado de la operacion de alta
 */
 
-app.get('/empleado',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send('Server Express contestando a peticion get')
 })
 
@@ -55,3 +60,28 @@ app.get("/api-spec", (req,res)=>{
 app.listen(3002,()=>{
     console.log('http://localhost:3002')
 })
+
+/**
+* @swagger
+* components:
+*    schemas:
+*       usuario:
+*         type: object
+*         properties:
+*           id_usuario:
+*             type: number
+*             example: 10
+*           nombre:
+*             type: string
+*             example: Gerardo
+*           ap_paterno:
+*             type: string
+*             example: Pineda
+*/
+
+/**
+* @swagger
+* tags:
+* - name: usuario
+*   description: Catalogo de usuarios
+*/
