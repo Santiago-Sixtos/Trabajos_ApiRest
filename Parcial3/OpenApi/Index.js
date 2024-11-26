@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const swaggerUI = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const app = express();
-//const datosReadme = fs.readFileSync(path.join(__dirname,'readme.md'),{ encoding: 'utf8', flag: 'r' });
+const datosReadme = fs.readFileSync(path.join(__dirname,'readme.md'),{ encoding: 'utf8', flag: 'r' });
 
 //const port = process.env.PORT || 8802;
 const  cors  = require ('cors');
@@ -15,7 +16,7 @@ const swaggerOptions = {
     info: {
     title: 'API Empleados',
     version: '1.0.0',
-    //description: datosReadme
+    description: datosReadme
     },
     servers:[
     { url: "http://localhost:3002" }
@@ -40,6 +41,8 @@ const swaggerOptions = {
 * @swagger
 * /empleado:
 *   post:
+*     tags:
+*       - Empleado
 *     description: Alta de Empleados
 *     responses:
 *       200:
@@ -84,4 +87,6 @@ app.listen(3002,()=>{
 * tags:
 * - name: usuario
 *   description: Catalogo de usuarios
+* - name: Empleado
+*   description: se dara de alta a los empleados
 */
