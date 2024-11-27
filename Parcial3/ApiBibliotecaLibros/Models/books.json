@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "title": "El principito",
+    "author_id": 1,
+    "genre_id": 1,
+    "published_year": 1943,
+    "description": "Esta historia narra las aventuras de un pequeño príncipe que emprende un viaje por el universo."
+  }
+]
